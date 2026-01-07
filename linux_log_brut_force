@@ -1,114 +1,114 @@
-2240  Oct  5 12:52:21 VulnOSv2 sshd[2346]: Connection closed by 192.168.210.131 [preauth]
-  2241  Oct  5 12:52:21 VulnOSv2 sshd[2346]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2242  Oct  5 12:52:21 VulnOSv2 sshd[2349]: Failed password for root from 192.168.210.131 port 57654 ssh2
-  2243  Oct  5 12:52:21 VulnOSv2 sshd[2349]: Connection closed by 192.168.210.131 [preauth]
-  2244  Oct  5 12:52:21 VulnOSv2 sshd[2349]: PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2245  Oct  5 12:52:22 VulnOSv2 sshd[2351]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2246  Oct  5 12:52:24 VulnOSv2 sshd[2351]: Failed password for root from 192.168.210.131 port 57656 ssh2
-  2247  Oct  5 12:52:24 VulnOSv2 sshd[2351]: Connection closed by 192.168.210.131 [preauth]
-  2248  Oct  5 12:52:24 VulnOSv2 sshd[2353]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2249  Oct  5 12:52:24 VulnOSv2 sshd[2355]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2250  Oct  5 12:52:26 VulnOSv2 sshd[2353]: Failed password for root from 192.168.210.131 port 57658 ssh2
-  2251  Oct  5 12:52:26 VulnOSv2 sshd[2353]: Connection closed by 192.168.210.131 [preauth]
-  2252  Oct  5 12:52:26 VulnOSv2 sshd[2355]: Failed password for root from 192.168.210.131 port 57660 ssh2
-  2253  Oct  5 12:52:26 VulnOSv2 sshd[2355]: Connection closed by 192.168.210.131 [preauth]
-  2254  Oct  5 12:52:28 VulnOSv2 sshd[2357]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2255  Oct  5 12:52:28 VulnOSv2 sshd[2358]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2256  Oct  5 12:52:30 VulnOSv2 sshd[2358]: Failed password for root from 192.168.210.131 port 57664 ssh2
-  2257  Oct  5 12:52:30 VulnOSv2 sshd[2357]: Failed password for root from 192.168.210.131 port 57662 ssh2
-  2258  Oct  5 12:52:30 VulnOSv2 sshd[2358]: Connection closed by 192.168.210.131 [preauth]
-  2259  Oct  5 12:52:30 VulnOSv2 sshd[2357]: Connection closed by 192.168.210.131 [preauth]
-  2260  Oct  5 12:52:32 VulnOSv2 sshd[2362]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2261  Oct  5 12:52:32 VulnOSv2 sshd[2361]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2262  Oct  5 12:52:34 VulnOSv2 sshd[2362]: Failed password for root from 192.168.210.131 port 57668 ssh2
-  2263  Oct  5 12:52:34 VulnOSv2 sshd[2361]: Failed password for root from 192.168.210.131 port 57666 ssh2
-  2264  Oct  5 12:52:34 VulnOSv2 sshd[2362]: Connection closed by 192.168.210.131 [preauth]
-  2265  Oct  5 12:52:34 VulnOSv2 sshd[2361]: Connection closed by 192.168.210.131 [preauth]
-  2266  Oct  5 12:52:35 VulnOSv2 sshd[2365]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2267  Oct  5 12:52:36 VulnOSv2 sshd[2367]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2268  Oct  5 12:52:38 VulnOSv2 sshd[2365]: Failed password for root from 192.168.210.131 port 57670 ssh2
-  2269  Oct  5 12:52:38 VulnOSv2 sshd[2367]: Failed password for root from 192.168.210.131 port 57672 ssh2
-  2270  Oct  5 12:52:38 VulnOSv2 sshd[2365]: Connection closed by 192.168.210.131 [preauth]
-  2271  Oct  5 12:52:38 VulnOSv2 sshd[2367]: Connection closed by 192.168.210.131 [preauth]
-  2272  Oct  5 12:52:50 VulnOSv2 sshd[2372]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2273  Oct  5 12:52:50 VulnOSv2 sshd[2370]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=root
-  2274  Oct  5 12:52:52 VulnOSv2 sshd[2372]: Failed password for root from 192.168.210.131 port 57676 ssh2
-  2275  Oct  5 12:52:52 VulnOSv2 sshd[2370]: Failed password for root from 192.168.210.131 port 57674 ssh2
-  2276  Oct  5 12:52:52 VulnOSv2 sshd[2370]: Connection closed by 192.168.210.131 [preauth]
-  2277  Oct  5 12:52:52 VulnOSv2 sshd[2372]: Connection closed by 192.168.210.131 [preauth]
-  2278  Oct  5 13:00:01 VulnOSv2 CRON[2438]: pam_unix(cron:session): session opened for user www-data by (uid=0)
-  2279  Oct  5 13:00:01 VulnOSv2 CRON[2438]: pam_unix(cron:session): session closed for user www-data
-  2280  Oct  5 13:06:38 VulnOSv2 sudo:     root : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/usr/sbin/useradd -d /usr/php -m --system --shell /bin/bash --skel /etc/skel -G sudo php
-  2281  Oct  5 13:06:38 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
-  2282  Oct  5 13:06:38 VulnOSv2 useradd[2525]: new group: name=php, GID=999
-  2283  Oct  5 13:06:38 VulnOSv2 useradd[2525]: new user: name=php, UID=999, GID=999, home=/usr/php, shell=/bin/bash
-  2284  Oct  5 13:06:38 VulnOSv2 useradd[2525]: add 'php' to group 'sudo'
-  2285  Oct  5 13:06:38 VulnOSv2 useradd[2525]: add 'php' to shadow group 'sudo'
-  2286  Oct  5 13:06:38 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2287  Oct  5 13:08:31 VulnOSv2 chsh[2536]: changed user 'mail' shell to '/bin/bash'
-  2288  Oct  5 13:09:01 VulnOSv2 CRON[2543]: pam_unix(cron:session): session opened for user root by (uid=0)
-  2289  Oct  5 13:09:01 VulnOSv2 CRON[2543]: pam_unix(cron:session): session closed for user root
-  2290  Oct  5 13:09:03 VulnOSv2 chpasswd[2558]: pam_smbpass(chpasswd:chauthtok): Failed to find entry for user mail.
-  2291  Oct  5 13:09:03 VulnOSv2 chpasswd[2558]: pam_unix(chpasswd:chauthtok): password changed for mail
-  2292  Oct  5 13:09:03 VulnOSv2 chpasswd[2558]: pam_smbpass(chpasswd:chauthtok): Failed to find entry for user mail.
-  2293  Oct  5 13:09:18 VulnOSv2 usermod[2561]: add 'mail' to group 'sudo'
-  2294  Oct  5 13:09:18 VulnOSv2 usermod[2561]: add 'mail' to shadow group 'sudo'
-  2295  Oct  5 13:13:53 VulnOSv2 sshd[2624]: Accepted password for mail from 192.168.210.131 port 57686 ssh2
-  2296  Oct  5 13:13:53 VulnOSv2 sshd[2624]: pam_unix(sshd:session): session opened for user mail by (uid=0)
-  2297  Oct  5 13:14:04 VulnOSv2 sudo:     mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
-  2298  Oct  5 13:14:04 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
-  2299  Oct  5 13:14:04 VulnOSv2 su[2721]: Successful su for root by root
-  2300  Oct  5 13:14:04 VulnOSv2 su[2721]: + /dev/pts/1 root:root
-  2301  Oct  5 13:14:04 VulnOSv2 su[2721]: pam_unix(su:session): session opened for user root by mail(uid=0)
-  2302  Oct  5 13:17:01 VulnOSv2 CRON[2789]: pam_unix(cron:session): session opened for user root by (uid=0)
-  2303  Oct  5 13:17:01 VulnOSv2 CRON[2789]: pam_unix(cron:session): session closed for user root
-  2304  Oct  5 13:18:23 VulnOSv2 su[2721]: pam_unix(su:session): session closed for user root
-  2305  Oct  5 13:18:23 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2306  Oct  5 13:18:48 VulnOSv2 sshd[2713]: Received disconnect from 192.168.210.131: 11: disconnected by user
-  2307  Oct  5 13:18:48 VulnOSv2 sshd[2624]: pam_unix(sshd:session): session closed for user mail
-  2308  Oct  5 13:18:54 VulnOSv2 sshd[2825]: Accepted password for mail from 192.168.210.131 port 57704 ssh2
-  2309  Oct  5 13:18:54 VulnOSv2 sshd[2825]: pam_unix(sshd:session): session opened for user mail by (uid=0)
-  2310  Oct  5 13:19:21 VulnOSv2 sudo:     mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
-  2311  Oct  5 13:19:21 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
-  2312  Oct  5 13:19:21 VulnOSv2 su[2884]: Successful su for root by root
-  2313  Oct  5 13:19:21 VulnOSv2 su[2884]: + /dev/pts/1 root:root
-  2314  Oct  5 13:19:21 VulnOSv2 su[2884]: pam_unix(su:session): session opened for user root by mail(uid=0)
-  2315  Oct  5 13:19:40 VulnOSv2 su[2884]: pam_unix(su:session): session closed for user root
-  2316  Oct  5 13:19:40 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2317  Oct  5 13:19:42 VulnOSv2 sshd[2873]: Received disconnect from 192.168.210.131: 11: disconnected by user
-  2318  Oct  5 13:19:42 VulnOSv2 sshd[2825]: pam_unix(sshd:session): session closed for user mail
-  2319  Oct  5 13:20:57 VulnOSv2 sshd[2999]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131  user=mail
-  2320  Oct  5 13:20:59 VulnOSv2 sshd[2999]: Failed password for mail from 192.168.210.131 port 57706 ssh2
-  2321  Oct  5 13:21:03 VulnOSv2 sshd[2999]: Accepted password for mail from 192.168.210.131 port 57706 ssh2
-  2322  Oct  5 13:21:03 VulnOSv2 sshd[2999]: pam_unix(sshd:session): session opened for user mail by (uid=0)
-  2323  Oct  5 13:21:11 VulnOSv2 sudo:     mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
-  2324  Oct  5 13:21:11 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
-  2325  Oct  5 13:21:11 VulnOSv2 su[3055]: Successful su for root by root
-  2326  Oct  5 13:21:11 VulnOSv2 su[3055]: + /dev/pts/1 root:root
-  2327  Oct  5 13:21:11 VulnOSv2 su[3055]: pam_unix(su:session): session opened for user root by mail(uid=0)
-  2328  Oct  5 13:21:19 VulnOSv2 su[3055]: pam_unix(su:session): session closed for user root
-  2329  Oct  5 13:21:19 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2330  Oct  5 13:21:24 VulnOSv2 passwd[3080]: passwd: can't view or modify password information for php
-  2331  Oct  5 13:21:30 VulnOSv2 sudo:     mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
-  2332  Oct  5 13:21:30 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
-  2333  Oct  5 13:21:30 VulnOSv2 su[3082]: Successful su for root by root
-  2334  Oct  5 13:21:30 VulnOSv2 su[3082]: + /dev/pts/1 root:root
-  2335  Oct  5 13:21:30 VulnOSv2 su[3082]: pam_unix(su:session): session opened for user root by mail(uid=0)
-  2336  Oct  5 13:21:34 VulnOSv2 passwd[3097]: pam_smbpass(passwd:chauthtok): Failed to find entry for user php.
-  2337  Oct  5 13:21:39 VulnOSv2 passwd[3097]: pam_unix(passwd:chauthtok): password changed for php
-  2338  Oct  5 13:21:39 VulnOSv2 passwd[3097]: pam_smbpass(passwd:chauthtok): Failed to find entry for user php.
-  2339  Oct  5 13:21:44 VulnOSv2 su[3082]: pam_unix(su:session): session closed for user root
-  2340  Oct  5 13:21:44 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2341  Oct  5 13:21:45 VulnOSv2 sshd[3048]: Received disconnect from 192.168.210.131: 11: disconnected by user
-  2342  Oct  5 13:21:45 VulnOSv2 sshd[2999]: pam_unix(sshd:session): session closed for user mail
-  2343  Oct  5 13:23:34 VulnOSv2 sshd[3108]: Accepted password for mail from 192.168.210.131 port 57708 ssh2
-  2344  Oct  5 13:23:34 VulnOSv2 sshd[3108]: pam_unix(sshd:session): session opened for user mail by (uid=0)
-  2345  Oct  5 13:23:39 VulnOSv2 sudo:     mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
-  2346  Oct  5 13:23:39 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
-  2347  Oct  5 13:23:39 VulnOSv2 su[3164]: Successful su for root by root
-  2348  Oct  5 13:23:39 VulnOSv2 su[3164]: + /dev/pts/1 root:root
-  2349  Oct  5 13:23:39 VulnOSv2 su[3164]: pam_unix(su:session): session opened for user root by mail(uid=0)
-  2350  Oct  5 13:24:09 VulnOSv2 su[3164]: pam_unix(su:session): session closed for user root
-  2351  Oct  5 13:24:09 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
-  2352  Oct  5 13:24:11 VulnOSv2 sshd[3156]: Received disconnect from 192.168.210.131: 11: disconnected by user
-  2353  Oct  5 13:24:11 VulnOSv2 sshd[3108]: pam_unix(sshd:session): session closed for user mail
+2240 Oct 5 12:52:21 VulnOSv2 sshd[2346]: Connection closed by 192.168.210.131 [preauth]
+2241 Oct 5 12:52:21 VulnOSv2 sshd[2346]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2242 Oct 5 12:52:21 VulnOSv2 sshd[2349]: Failed password for root from 192.168.210.131 port 57654 ssh2
+2243 Oct 5 12:52:21 VulnOSv2 sshd[2349]: Connection closed by 192.168.210.131 [preauth]
+2244 Oct 5 12:52:21 VulnOSv2 sshd[2349]: PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2245 Oct 5 12:52:22 VulnOSv2 sshd[2351]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2246 Oct 5 12:52:24 VulnOSv2 sshd[2351]: Failed password for root from 192.168.210.131 port 57656 ssh2
+2247 Oct 5 12:52:24 VulnOSv2 sshd[2351]: Connection closed by 192.168.210.131 [preauth]
+2248 Oct 5 12:52:24 VulnOSv2 sshd[2353]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2249 Oct 5 12:52:24 VulnOSv2 sshd[2355]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2250 Oct 5 12:52:26 VulnOSv2 sshd[2353]: Failed password for root from 192.168.210.131 port 57658 ssh2
+2251 Oct 5 12:52:26 VulnOSv2 sshd[2353]: Connection closed by 192.168.210.131 [preauth]
+2252 Oct 5 12:52:26 VulnOSv2 sshd[2355]: Failed password for root from 192.168.210.131 port 57660 ssh2
+2253 Oct 5 12:52:26 VulnOSv2 sshd[2355]: Connection closed by 192.168.210.131 [preauth]
+2254 Oct 5 12:52:28 VulnOSv2 sshd[2357]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2255 Oct 5 12:52:28 VulnOSv2 sshd[2358]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2256 Oct 5 12:52:30 VulnOSv2 sshd[2358]: Failed password for root from 192.168.210.131 port 57664 ssh2
+2257 Oct 5 12:52:30 VulnOSv2 sshd[2357]: Failed password for root from 192.168.210.131 port 57662 ssh2
+2258 Oct 5 12:52:30 VulnOSv2 sshd[2358]: Connection closed by 192.168.210.131 [preauth]
+2259 Oct 5 12:52:30 VulnOSv2 sshd[2357]: Connection closed by 192.168.210.131 [preauth]
+2260 Oct 5 12:52:32 VulnOSv2 sshd[2362]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2261 Oct 5 12:52:32 VulnOSv2 sshd[2361]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2262 Oct 5 12:52:34 VulnOSv2 sshd[2362]: Failed password for root from 192.168.210.131 port 57668 ssh2
+2263 Oct 5 12:52:34 VulnOSv2 sshd[2361]: Failed password for root from 192.168.210.131 port 57666 ssh2
+2264 Oct 5 12:52:34 VulnOSv2 sshd[2362]: Connection closed by 192.168.210.131 [preauth]
+2265 Oct 5 12:52:34 VulnOSv2 sshd[2361]: Connection closed by 192.168.210.131 [preauth]
+2266 Oct 5 12:52:35 VulnOSv2 sshd[2365]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2267 Oct 5 12:52:36 VulnOSv2 sshd[2367]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2268 Oct 5 12:52:38 VulnOSv2 sshd[2365]: Failed password for root from 192.168.210.131 port 57670 ssh2
+2269 Oct 5 12:52:38 VulnOSv2 sshd[2367]: Failed password for root from 192.168.210.131 port 57672 ssh2
+2270 Oct 5 12:52:38 VulnOSv2 sshd[2365]: Connection closed by 192.168.210.131 [preauth]
+2271 Oct 5 12:52:38 VulnOSv2 sshd[2367]: Connection closed by 192.168.210.131 [preauth]
+2272 Oct 5 12:52:50 VulnOSv2 sshd[2372]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2273 Oct 5 12:52:50 VulnOSv2 sshd[2370]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+2274 Oct 5 12:52:52 VulnOSv2 sshd[2372]: Failed password for root from 192.168.210.131 port 57676 ssh2
+2275 Oct 5 12:52:52 VulnOSv2 sshd[2370]: Failed password for root from 192.168.210.131 port 57674 ssh2
+2276 Oct 5 12:52:52 VulnOSv2 sshd[2370]: Connection closed by 192.168.210.131 [preauth]
+2277 Oct 5 12:52:52 VulnOSv2 sshd[2372]: Connection closed by 192.168.210.131 [preauth]
+2278 Oct 5 13:00:01 VulnOSv2 CRON[2438]: pam_unix(cron:session): session opened for user www-data by (uid=0)
+2279 Oct 5 13:00:01 VulnOSv2 CRON[2438]: pam_unix(cron:session): session closed for user www-data
+2280 Oct 5 13:06:38 VulnOSv2 sudo: root : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/usr/sbin/useradd -d /usr/php -m --system --shell /bin/bash --skel /etc/skel -G sudo php
+2281 Oct 5 13:06:38 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+2282 Oct 5 13:06:38 VulnOSv2 useradd[2525]: new group: name=php, GID=999
+2283 Oct 5 13:06:38 VulnOSv2 useradd[2525]: new user: name=php, UID=999, GID=999, home=/usr/php, shell=/bin/bash
+2284 Oct 5 13:06:38 VulnOSv2 useradd[2525]: add 'php' to group 'sudo'
+2285 Oct 5 13:06:38 VulnOSv2 useradd[2525]: add 'php' to shadow group 'sudo'
+2286 Oct 5 13:06:38 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2287 Oct 5 13:08:31 VulnOSv2 chsh[2536]: changed user 'mail' shell to '/bin/bash'
+2288 Oct 5 13:09:01 VulnOSv2 CRON[2543]: pam_unix(cron:session): session opened for user root by (uid=0)
+2289 Oct 5 13:09:01 VulnOSv2 CRON[2543]: pam_unix(cron:session): session closed for user root
+2290 Oct 5 13:09:03 VulnOSv2 chpasswd[2558]: pam_smbpass(chpasswd:chauthtok): Failed to find entry for user mail.
+2291 Oct 5 13:09:03 VulnOSv2 chpasswd[2558]: pam_unix(chpasswd:chauthtok): password changed for mail
+2292 Oct 5 13:09:03 VulnOSv2 chpasswd[2558]: pam_smbpass(chpasswd:chauthtok): Failed to find entry for user mail.
+2293 Oct 5 13:09:18 VulnOSv2 usermod[2561]: add 'mail' to group 'sudo'
+2294 Oct 5 13:09:18 VulnOSv2 usermod[2561]: add 'mail' to shadow group 'sudo'
+2295 Oct 5 13:13:53 VulnOSv2 sshd[2624]: Accepted password for mail from 192.168.210.131 port 57686 ssh2
+2296 Oct 5 13:13:53 VulnOSv2 sshd[2624]: pam_unix(sshd:session): session opened for user mail by (uid=0)
+2297 Oct 5 13:14:04 VulnOSv2 sudo: mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
+2298 Oct 5 13:14:04 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
+2299 Oct 5 13:14:04 VulnOSv2 su[2721]: Successful su for root by root
+2300 Oct 5 13:14:04 VulnOSv2 su[2721]: + /dev/pts/1 root:root
+2301 Oct 5 13:14:04 VulnOSv2 su[2721]: pam_unix(su:session): session opened for user root by mail(uid=0)
+2302 Oct 5 13:17:01 VulnOSv2 CRON[2789]: pam_unix(cron:session): session opened for user root by (uid=0)
+2303 Oct 5 13:17:01 VulnOSv2 CRON[2789]: pam_unix(cron:session): session closed for user root
+2304 Oct 5 13:18:23 VulnOSv2 su[2721]: pam_unix(su:session): session closed for user root
+2305 Oct 5 13:18:23 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2306 Oct 5 13:18:48 VulnOSv2 sshd[2713]: Received disconnect from 192.168.210.131: 11: disconnected by user
+2307 Oct 5 13:18:48 VulnOSv2 sshd[2624]: pam_unix(sshd:session): session closed for user mail
+2308 Oct 5 13:18:54 VulnOSv2 sshd[2825]: Accepted password for mail from 192.168.210.131 port 57704 ssh2
+2309 Oct 5 13:18:54 VulnOSv2 sshd[2825]: pam_unix(sshd:session): session opened for user mail by (uid=0)
+2310 Oct 5 13:19:21 VulnOSv2 sudo: mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
+2311 Oct 5 13:19:21 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
+2312 Oct 5 13:19:21 VulnOSv2 su[2884]: Successful su for root by root
+2313 Oct 5 13:19:21 VulnOSv2 su[2884]: + /dev/pts/1 root:root
+2314 Oct 5 13:19:21 VulnOSv2 su[2884]: pam_unix(su:session): session opened for user root by mail(uid=0)
+2315 Oct 5 13:19:40 VulnOSv2 su[2884]: pam_unix(su:session): session closed for user root
+2316 Oct 5 13:19:40 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2317 Oct 5 13:19:42 VulnOSv2 sshd[2873]: Received disconnect from 192.168.210.131: 11: disconnected by user
+2318 Oct 5 13:19:42 VulnOSv2 sshd[2825]: pam_unix(sshd:session): session closed for user mail
+2319 Oct 5 13:20:57 VulnOSv2 sshd[2999]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=mail
+2320 Oct 5 13:20:59 VulnOSv2 sshd[2999]: Failed password for mail from 192.168.210.131 port 57706 ssh2
+2321 Oct 5 13:21:03 VulnOSv2 sshd[2999]: Accepted password for mail from 192.168.210.131 port 57706 ssh2
+2322 Oct 5 13:21:03 VulnOSv2 sshd[2999]: pam_unix(sshd:session): session opened for user mail by (uid=0)
+2323 Oct 5 13:21:11 VulnOSv2 sudo: mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
+2324 Oct 5 13:21:11 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
+2325 Oct 5 13:21:11 VulnOSv2 su[3055]: Successful su for root by root
+2326 Oct 5 13:21:11 VulnOSv2 su[3055]: + /dev/pts/1 root:root
+2327 Oct 5 13:21:11 VulnOSv2 su[3055]: pam_unix(su:session): session opened for user root by mail(uid=0)
+2328 Oct 5 13:21:19 VulnOSv2 su[3055]: pam_unix(su:session): session closed for user root
+2329 Oct 5 13:21:19 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2330 Oct 5 13:21:24 VulnOSv2 passwd[3080]: passwd: can't view or modify password information for php
+2331 Oct 5 13:21:30 VulnOSv2 sudo: mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
+2332 Oct 5 13:21:30 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
+2333 Oct 5 13:21:30 VulnOSv2 su[3082]: Successful su for root by root
+2334 Oct 5 13:21:30 VulnOSv2 su[3082]: + /dev/pts/1 root:root
+2335 Oct 5 13:21:30 VulnOSv2 su[3082]: pam_unix(su:session): session opened for user root by mail(uid=0)
+2336 Oct 5 13:21:34 VulnOSv2 passwd[3097]: pam_smbpass(passwd:chauthtok): Failed to find entry for user php.
+2337 Oct 5 13:21:39 VulnOSv2 passwd[3097]: pam_unix(passwd:chauthtok): password changed for php
+2338 Oct 5 13:21:39 VulnOSv2 passwd[3097]: pam_smbpass(passwd:chauthtok): Failed to find entry for user php.
+2339 Oct 5 13:21:44 VulnOSv2 su[3082]: pam_unix(su:session): session closed for user root
+2340 Oct 5 13:21:44 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2341 Oct 5 13:21:45 VulnOSv2 sshd[3048]: Received disconnect from 192.168.210.131: 11: disconnected by user
+2342 Oct 5 13:21:45 VulnOSv2 sshd[2999]: pam_unix(sshd:session): session closed for user mail
+2343 Oct 5 13:23:34 VulnOSv2 sshd[3108]: Accepted password for mail from 192.168.210.131 port 57708 ssh2
+2344 Oct 5 13:23:34 VulnOSv2 sshd[3108]: pam_unix(sshd:session): session opened for user mail by (uid=0)
+2345 Oct 5 13:23:39 VulnOSv2 sudo: mail : TTY=pts/1 ; PWD=/var/mail ; USER=root ; COMMAND=/bin/su -
+2346 Oct 5 13:23:39 VulnOSv2 sudo: pam_unix(sudo:session): session opened for user root by mail(uid=0)
+2347 Oct 5 13:23:39 VulnOSv2 su[3164]: Successful su for root by root
+2348 Oct 5 13:23:39 VulnOSv2 su[3164]: + /dev/pts/1 root:root
+2349 Oct 5 13:23:39 VulnOSv2 su[3164]: pam_unix(su:session): session opened for user root by mail(uid=0)
+2350 Oct 5 13:24:09 VulnOSv2 su[3164]: pam_unix(su:session): session closed for user root
+2351 Oct 5 13:24:09 VulnOSv2 sudo: pam_unix(sudo:session): session closed for user root
+2352 Oct 5 13:24:11 VulnOSv2 sshd[3156]: Received disconnect from 192.168.210.131: 11: disconnected by user
+2353 Oct 5 13:24:11 VulnOSv2 sshd[3108]: pam_unix(sshd:session): session closed for user mail

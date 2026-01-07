@@ -1,4 +1,4 @@
 Description: 'Замени эти слова на описание нормализации'
 EventDescriptions:
-  - LocalizationId: 'Windows_logs_1'
+  - LocalizationId: '4624_Windows_logs_1'
     EventDescription: 'Замени эти слова на описание с таксономическими полями. Пример: Пользователь {subject.account.name} запустил процесс {object.process.name} на узле {event_src.host}'

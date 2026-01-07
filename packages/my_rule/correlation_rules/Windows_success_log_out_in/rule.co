@@ -1,0 +1,28 @@
+event Success_login:
+    key:
+        event_src.hostname
+        filter {
+            msgid == "4624"
+        }
+
+event Detect_username:
+    key:
+    event_src.hostname
+        filter {
+            msgid == "5379"
+        }
+
+rule Windows_login: (Success_login -> Detect_username)
+emit {
+    $correlation_type = "event"
+    $object = "client"
+    $action = "check"
+    $status = "success"
+    $importance = "info"
+}
+# for test
+# {"action":"login","event_src.hostname":"DESKTOP-9B4ST7E","event_src.title":"Security","event_src.vendor":"microsoft","id":"ID_normalized_event_example","importance":"info","msgid":"4624","object":"host","src.fqdn":"DESKTOP-9B4ST7E","src.hostname":"DESKTOP-9B4ST7E","src.ip":"192.168.1.1","status":"success","subject":"account","subject.account.domain":"WORKGROUP","subject.account.id":"S-1-5-18","subject.account.name":"DESKTOP-9B4ST7E$","subject.process.id":"632","subject.process.name":"C:\\Windows\\System32\\services.exe","time":"2026-01-07T05:46:09.856Z"}
+
+# {"action":"logout","event_src.hostname":"DESKTOP-B9B2SVC","event_src.title":"Security","event_src.vendor":"microsoft","id":"ID_normalized_event_example","importance":"info","msgid":"4634","object":"host","src.fqdn":"DESKTOP-B9B2SVC","src.hostname":"DESKTOP-B9B2SVC","src.ip":"192.168.1.1","status":"success","subject":"account","subject.account.domain":"DESKTOP-B9B2SVC","subject.account.id":"S-1-5-21-270202403-3506642359-2832034404-1001","subject.account.name":"Dekstop","subject.process.id":"1620","time":"2026-01-06T16:54:02.990Z"}
+
+# {"action":"read","event_src.hostname":"DESKTOP-9B4ST7E","event_src.title":"Security","event_src.vendor":"microsoft","id":"ID_normalized_event_example","importance":"info","msgid":"5379","object":"service","src.fqdn":"DESKTOP-9B4ST7E","src.hostname":"DESKTOP-9B4ST7E","src.ip":"192.168.1.1","status":"success","subject":"account","subject.account.domain":"DESKTOP-9B4ST7E","subject.account.id":"S-1-5-21-3731029481-178578797-3032811142-1001","subject.account.name":"zahar","subject.process.id":"632","time":"2026-01-07T05:46:09.908Z"}

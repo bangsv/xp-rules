@@ -1,1 +1,1 @@
-expect 1 {"correlation_name": "CreateProcessAsUser_Impersonation"}
+expect 1 {"correlation_name":"CreateProcessAsUser_Impersonation"}

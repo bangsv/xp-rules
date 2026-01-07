@@ -1,0 +1,7 @@
+EventDescriptions:
+  - Criteria: id = "4624_Windows_logs"
+    LocalizationId: 4624_Windows_logs_1
+ObjectId: SEC-NF-271866813
+ExpertContext:
+  Created: 06.01.2026
+  Updated: 07.01.2026
