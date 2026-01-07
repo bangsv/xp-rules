@@ -1,0 +1,3 @@
+filter CheckNum(string $num){
+	$num != "9"
+}

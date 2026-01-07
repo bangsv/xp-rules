@@ -6,7 +6,7 @@ event Fail_login:
         and status == "failure"
     }
 
-rule Brutforce: Fail_login [2] # [2] - кол-во евентов
+rule Brutforce: Fail_login  # [2] - кол-во евентов
     on Fail_login {
         # 1. Поля таксономии, которые относятся к основным сущностям и заполняются статично
         $action = action
@@ -33,12 +33,15 @@ rule Brutforce: Fail_login [2] # [2] - кол-во евентов
         $event_src.vendor = event_src.vendor
 
         $id = id
+
     }
 
 emit {
+
     $correlation_type = "event"
     $object = "client"
     $action = "login"
     $status = "failure"
     $importance = "high"
+
 }

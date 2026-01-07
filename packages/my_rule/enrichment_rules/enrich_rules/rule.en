@@ -1,0 +1,14 @@
+event AnythingWithProtocol:
+    filter {
+        protocol != null and protocol != ""
+    }
+enrichment Protocol_number_to_name
+    enrich AnythingWithProtocol:
+        enrich_fields {
+            switch protocol # Применяется конструкция switch ... case для смены значения 17 поля protocol на имя протокола
+                case "1" protocol = "ICMP" # Internet Control Message
+                case "2" protocol = "IGMP" # Internet Group Management
+                case "6" protocol = "TCP" # Transmission Control
+                case "17" protocol = "UDP" # User Datagram
+            endswitch
+        }

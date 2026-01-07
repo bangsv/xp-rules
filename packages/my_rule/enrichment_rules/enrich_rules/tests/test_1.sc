@@ -1,0 +1,3 @@
+{"time":"2017-10-18T12:00:00.000Z","event_src.ip":"10.0.12.45","object.account.domain":"super_admin","dst.ip":"192.0.2.11","dst.port":21,"protocol":"17","object.process.id":"32571","action":"close","subject":"account","object":"connection","status":"success","duration":55,"importance":"info","event_src.vendor":"Best Company","event_src.title":"NG Session Controller","event_src.category":"Other","id":"ID_normalized_event_example","event_src.host":"10.0.12.45","dst.host":"192.0.2.11"}
+
+expect 1 {}
