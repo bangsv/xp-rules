@@ -1,0 +1,31 @@
+# 2240 Oct 5 12:52:21 VulnOSv2 sshd[2346]: Connection closed by 192.168.210.131 [preauth]
+# 2241 Oct 5 12:52:21 VulnOSv2 sshd[2346]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.210.131 user=root
+# 2242 Oct 5 12:52:21 VulnOSv2 sshd[2349]: Failed password for root from 192.168.210.131 port 57654 ssh2
+
+# Единичный случай 
+TEXT = '{NUMBER} {time = DATETIME} {event_src.host = HOSTNAME} sshd[{NUMBER}]: Failed password for {subject.account.name = WORD} from {src.ip = IPV4} port {src.port = NUMBER} ssh2'
+
+action = "login"
+object = "account"
+status = "failure"
+
+dst.ip = "10.10.12.1"
+dst.host = event_src.host
+dst.hostname = event_src.host
+dst.port = "22"
+
+event_src.title = "linux"
+event_src.vendor = "sshd"
+event_src.category = "AAA"
+
+importance = "high"
+
+id = "My_rule_detect_brut_ssh"
+
+# Под весь тип shhd
+# TEXT = '{NUMBER} {time = DATETIME} {event_src.host = HOSTNAME} {$check = REST}'
+
+# submessage("TEXT", "other_text", $check)
+
+#time = recv_time
+

@@ -1,0 +1,7 @@
+EventDescriptions:
+  - Criteria: id = "Linux_log_ssh"
+    LocalizationId: Linux_log_ssh_1
+ObjectId: SEC-NF-140951191
+ExpertContext:
+  Created: 07.01.2026
+  Updated: 07.01.2026

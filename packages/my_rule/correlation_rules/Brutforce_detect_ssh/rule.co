@@ -1,0 +1,44 @@
+event Fail_login:
+    key:
+        event_src.host
+    filter {
+        action == "login"
+        and status == "failure"
+    }
+
+rule Brutforce: Fail_login [2] # [2] - кол-во евентов
+    on Fail_login {
+        # 1. Поля таксономии, которые относятся к основным сущностям и заполняются статично
+        $action = action
+        $object = object
+        $status = status
+
+        # 3. Поля таксономии, являющиеся атрибутами основных сущностей
+        $subject.account.name = subject.account.name
+
+        # 4. Поля таксономии, определяющие параметры сетевого взаимодействия
+        $src.ip = src.ip
+        $src.port = src.port
+        $dst.host = dst.host
+        $dst.hostname = dst.hostname
+        $dst.ip = dst.ip
+        $dst.port = dst.port
+
+        $time = time
+
+        # 8. Атрибуты источника сообщения
+        $event_src.category = event_src.category
+        $event_src.host = event_src.host
+        $event_src.title = event_src.title
+        $event_src.vendor = event_src.vendor
+
+        $id = id
+    }
+
+emit {
+    $correlation_type = "event"
+    $object = "client"
+    $action = "login"
+    $status = "failure"
+    $importance = "high"
+}
