@@ -4,9 +4,9 @@ event Fail_login:
     filter {
         action == "login"
         and status == "failure"
-    }
+    }   
 
-rule Brutforce: Fail_login  # [2] - кол-во евентов
+rule Brutforce_ssh: Fail_login  # [2] - кол-во евентов
     on Fail_login {
         # 1. Поля таксономии, которые относятся к основным сущностям и заполняются статично
         $action = action

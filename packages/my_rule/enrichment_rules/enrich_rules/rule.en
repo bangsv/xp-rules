@@ -1,14 +1,15 @@
-event AnythingWithProtocol:
+event AnythingWithPort:
     filter {
-        protocol != null and protocol != ""
+        dst.port != null and dst.port != ""
     }
-enrichment Protocol_number_to_name
-    enrich AnythingWithProtocol:
+
+enrichment Port_number_to_name
+    enrich AnythingWithPort:
         enrich_fields {
-            switch protocol # Применяется конструкция switch ... case для смены значения 17 поля protocol на имя протокола
-                case "1" protocol = "ICMP" # Internet Control Message
-                case "2" protocol = "IGMP" # Internet Group Management
-                case "6" protocol = "TCP" # Transmission Control
-                case "17" protocol = "UDP" # User Datagram
+            switch dst.port # Применяется конструкция switch ... case для смены значения 17 поля protocol на имя протокола
+                case 22 protocol = "SSH" # Internet Control Message
+                case 23 protocol = "Telnet" # Internet Group Management
+                case 21 protocol = "FTP" # Transmission Control
+                case 53 protocol = "DNS" # User Datagram
             endswitch
         }
