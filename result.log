@@ -1,0 +1,12 @@
+original_log
+2242 Oct 5 12:52:21 VulnOSv2 sshd[2349]: Failed password for root from 192.168.210.131 port 57654 ssh2
+
+normaliz_log: 
+{"action":"login","dst.host":"VulnOSv2","dst.hostname":"VulnOSv2","dst.ip":"10.10.12.1","dst.port":22,"event_src.category":"AAA","event_src.host":"VulnOSv2","event_src.title":"linux","event_src.vendor":"sshd","id":"My_rule_detect_brut_ssh","importance":"high","object":"account","src.ip":"192.168.210.131","src.port":57654,"status":"failure","subject.account.name":"root","time":"2025-10-05T12:52:21.000Z"}
+
+correlation_log:
+{    "action": "login",    "correlation_name": "Brutforce_ssh",    "correlation_type": "event",    "count": 1,    "dst.host": "VulnOSv2",    "dst.hostname": "VulnOSv2",    "dst.ip": "10.10.12.1",    "dst.port": 22,    "event_src.category": "AAA",    "event_src.host": "VulnOSv2",    "event_src.title": "linux",    "event_src.vendor": "sshd",    "id": "My_rule_detect_brut_ssh",    "importance": "high",    "object": "client",    "src.ip": "192.168.210.131",    "src.port": 57654,    "status": "failure",    "subject.account.name": "root",    "time": "2025-10-05T12:52:21.000Z"}
+
+enrich_log:
+{    "action": "login",    "correlation_name": "Brutforce_ssh",    "correlation_type": "event",    "count": 1,    "dst.host": "VulnOSv2",    "dst.hostname": "VulnOSv2",    "dst.ip": "10.10.12.1",    "dst.port": 22,    "event_src.category": "AAA",    "event_src.host": "VulnOSv2",    "event_src.title": "linux",    "event_src.vendor": "sshd",    "id": "My_rule_detect_brut_ssh",    "importance": "high",    "object": "client",    "protocol": "SSH",    "src.ip": "192.168.210	.131",    "src.port": 57654,    "status": "failure",    "subject.account.name": "root",    "time": "2025-10-05T12:52:21.000Z"}
+
