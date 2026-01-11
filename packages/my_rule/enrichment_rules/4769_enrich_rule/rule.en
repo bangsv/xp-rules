@@ -1,0 +1,18 @@
+event Event_req_ticket:
+    filter {
+        msgid == "4769" 
+    }
+
+
+enrichment Chipher_enrich
+    enrich Event_req_ticket:
+        enrich_fields {
+            switch datafield2
+            case "0x1"  datafield3 = "des-cbc-crc"
+            case "0x3"  datafield3 = "des-cbc-md5"
+            case "0x11" datafield3 = "aes128-cts-hmca-sha1-96"
+            case "0x12" datafield3 = "aes256-cts-hmac-sha1-96"
+            case "0x17" datafield3 = "rc4-hmac"
+            case "0x18" datafield3 = "rc4-hmac-exp"
+            endswitch
+        }

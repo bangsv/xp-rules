@@ -1,3 +1,0 @@
-{    "action": "login",    "dst.host": "VulnOSv2",    "dst.hostname": "VulnOSv2",    "dst.ip": "10.10.12.1",    "dst.port": 22,    "event_src.category": "AAA",    "event_src.host": "VulnOSv2",    "event_src.title": "linux",    "event_src.vendor": "sshd",    "id": "My_rule_detect_brut_ssh",    "importance": "high",    "object": "account",    "src.ip": "192.168.210.131",    "src.port": 57654,    "status": "failure",    "subject.account.name": "root",    "time": "2025-10-05T12:52:21.000Z"}
-
-expect 1 {}

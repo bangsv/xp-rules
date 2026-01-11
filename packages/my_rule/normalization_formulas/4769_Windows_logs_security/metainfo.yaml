@@ -1,0 +1,7 @@
+EventDescriptions:
+  - Criteria: id = "4769_Windows_logs_security"
+    LocalizationId: 4769_Windows_logs_security_1
+ObjectId: SEC-NF-727004830
+ExpertContext:
+  Created: 11.01.2026
+  Updated: 11.01.2026

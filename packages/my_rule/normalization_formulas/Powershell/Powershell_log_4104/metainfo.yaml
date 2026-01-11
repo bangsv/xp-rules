@@ -1,0 +1,7 @@
+EventDescriptions:
+  - Criteria: id = "Powershell_log_4104"
+    LocalizationId: Powershell_log_4104_1
+ObjectId: SEC-NF-208077673
+ExpertContext:
+  Created: 11.01.2026
+  Updated: 11.01.2026

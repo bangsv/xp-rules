@@ -1,0 +1,57 @@
+event Ticket_req:
+    key:
+        event_src.host, src.host
+    filter {
+        filter::NotFromCorrelator()
+        and msgid == "4769"
+        and (datafield2 == "0x17" or datafield2 == "0x18")
+        and logon_service != null
+        # filter::CheckWL("Kerberosting", service.account)
+        # and object == "request"
+    }
+
+rule Kerberoasting: Ticket_req [1] within 10m # 1 событие за 10 минут
+    on Ticket_req {
+        # 1. Поля таксономии, которые относятся к основным сущностям и заполняются статично
+        $subject.account.name = subject.account.name
+        $object.account.domain = object.account.domain
+        $object.account.id = object.account.id
+
+        $src.host = src.host
+        $src.ip = src.ip
+        $src.port = src.port
+
+        $datafield1 = datafield1 
+        $datafield2 = datafield2
+        $datafield10 = datafield10
+        $datafield5 = count.subevents # кол-во событий
+
+        $msgid = msgid
+        $time = time
+
+        $logon_service = logon_service
+
+        $event_src.vendor = event_src.vendor
+        $event_src.title = event_src.title
+        $event_src.category = event_src.category
+        $event_src.asset = event_src.asset
+
+        $id = "Kerberoasting_T1558.003"
+    }
+
+emit {
+
+    $correlation_type = "incident"
+    $object = "client"
+    $action = "login"
+    $status = "success"
+    $importance = "high"
+
+    $alert.context = join(["Username attacker:" + $subject.account.name, "Host attacker:" + $src.host, "Count of req tickets: " + string($datafield5), "Service: " + $logon_service])
+
+    $category.generic = "Attack"
+    $category.high = "Credential Access"
+    $category.low = "Steal or Forge Kerberos Tickets: Kerberoasting"
+
+    $incident.description = "Массовые запросы TGS билета с определенным типом шифрования"
+}

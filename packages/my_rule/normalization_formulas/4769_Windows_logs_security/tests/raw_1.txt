@@ -1,0 +1,77 @@
+{
+    "Event": {
+        "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event",
+        "System": {
+            "Provider": {
+                "Name": "Microsoft-Windows-Security-Auditing",
+                "Guid": "{54849625-5478-4994-a5ba-3e3b0328c30d}"
+            },
+            "EventID": "4769",
+            "Version": "0",
+            "Level": "0",
+            "Task": "14337",
+            "Opcode": "0",
+            "Keywords": "0x8020000000000000",
+            "TimeCreated": {
+                "SystemTime": "2024-05-21T03:18:09.4596820Z"
+            },
+            "EventRecordID": "6672",
+            "Correlation": null,
+            "Execution": {
+                "ProcessID": "748",
+                "ThreadID": "5376"
+            },
+            "Channel": "Security",
+            "Computer": "DC01.forela.local",
+            "Security": null
+        },
+        "EventData": {
+            "Data": [
+                {
+                    "Name": "TargetUserName",
+                    "text": "alonzo.spire@FORELA.LOCAL"
+                },
+                {
+                    "Name": "TargetDomainName",
+                    "text": "FORELA.LOCAL"
+                },
+                {
+                    "Name": "ServiceName",
+                    "text": "MSSQLService"
+                },
+                {
+                    "Name": "ServiceSid",
+                    "text": "S-1-5-21-3239415629-1862073780-2394361899-1105"
+                },
+                {
+                    "Name": "TicketOptions",
+                    "text": "0x40800000"
+                },
+                {
+                    "Name": "TicketEncryptionType",
+                    "text": "0x17"
+                },
+                {
+                    "Name": "IpAddress",
+                    "text": "::ffff:172.17.79.129"
+                },
+                {
+                    "Name": "IpPort",
+                    "text": "58107"
+                },
+                {
+                    "Name": "Status",
+                    "text": "0x0"
+                },
+                {
+                    "Name": "LogonGuid",
+                    "text": "{59f3b9b1-65ed-a449-5ac0-8ea1f68478ee}"
+                },
+                {
+                    "Name": "TransmittedServices",
+                    "text": "-"
+                }
+            ]
+        }
+    }
+}
