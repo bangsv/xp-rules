@@ -1,0 +1,25 @@
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+<System>
+  <Provider Name="Microsoft-Windows-PowerShell" Guid="{a0c1853b-5c40-4b15-8766-3cf1c58f985a}" /> 
+  <EventID>4104</EventID> 
+  <Version>1</Version> 
+  <Level>3</Level> 
+  <Task>2</Task> 
+  <Opcode>15</Opcode> 
+  <Keywords>0x0</Keywords> 
+  <TimeCreated SystemTime="2024-05-21T03:17:25.3651613Z" /> 
+  <EventRecordID>165</EventRecordID> 
+  <Correlation ActivityID="{b6df577b-ab2b-0007-d76c-dfb62babda01}" /> 
+  <Execution ProcessID="9200" ThreadID="9056" /> 
+  <Channel>Microsoft-Windows-PowerShell/Operational</Channel> 
+  <Computer>Forela-Wkstn001.forela.local</Computer> 
+  <Security UserID="S-1-5-21-3239415629-1862073780-2394361899-1104" /> 
+  </System>
+<EventData>
+  <Data Name="MessageNumber">1</Data> 
+  <Data Name="MessageTotal">1</Data> 
+  <Data Name="ScriptBlockText">{ # convert/process the LDAP fields for each result Convert-LDAPProperty -Properties $_.Properties }</Data> 
+  <Data Name="ScriptBlockId">5196972d-d363-4209-b1b9-13b1cc1584cb</Data> 
+  <Data Name="Path">C:\Users\alonzo.spire\Downloads\powerview.ps1</Data> 
+  </EventData>
+  </Event>

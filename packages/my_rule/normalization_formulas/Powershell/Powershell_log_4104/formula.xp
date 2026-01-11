@@ -1,1 +1,26 @@
-XML = 
+XML = "Event.System"
+
+$point = find_substr($Event["System"]["Computer"], ".")
+
+object = "command"
+action = "create"
+status = "success"
+
+#object.account.name = regex()
+object.account.domain = lower(substr($Event["System"]["Computer"],$point + 1, length($Event["System"]["Computer"])))
+object.account.fullname = lower($Event["System"]["Computer"])
+object.account.privileges = lower($Event["System"]["Security"]["@UserID"])
+object.process.fullpath = lower($Event["EventData"]["Data"][4])
+
+src.host = lower(substr($Event["System"]["Computer"],0,$point))
+
+datafield1 = $Event["EventData"]["Data"][2]
+
+time = recv_time
+msgid = $Event["System"]["EventID"]
+importance = "info"
+
+event_src.vendor = "mircosoft"
+event_src.host = lower(substr($Event["System"]["Computer"],0,$point))
+event_src.fqdn = lower($Event["System"]["Computer"])
+event_src.title = $Event["System"]["Provider"]["@Name"]
