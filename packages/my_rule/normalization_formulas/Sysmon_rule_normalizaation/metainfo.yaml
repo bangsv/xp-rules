@@ -1,0 +1,7 @@
+EventDescriptions:
+  - Criteria: id = "Sysmon_rule_normalizaation"
+    LocalizationId: Sysmon_rule_normalizaation_1
+ObjectId: SEC-NF-105913669
+ExpertContext:
+  Created: 18.01.2026
+  Updated: 20.01.2026
