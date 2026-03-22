@@ -1,10 +1,9 @@
 # 2026-03-22 19:47:58.865 | [GIN] 2026/03/22 - 16:47:58 | 200 | 7.257288ms | 172.22.0.1 | GET "/api/backup"
 
-
 TEXT = '{$data=STRING} {$time=STRING} | [{datafield1=WORD}] {$data_utc=STRING} - {$tme_utc=STRING} | {msgid=NUMBER} | {STRING} | {src.ip=IPV4} | {$method=STRING} {object.process.path=STRING}'
 
 subject = "account"
-action = "restart"
+action = "request"
 object = "application"
 
 if $code == 200 then
