@@ -53,12 +53,10 @@ endif
 # 7 category
 logon_service = lower($Data["ServiceName"])
 
-
 # 8 event_src.*
 event_src.vendor = "microsoft"
 event_src.title = "windows"
 event_src.category = "AAA"
 event_src.asset = strip($Provider["Guid"],"{", "}")
-
 
 id = "Rule_normalization_event_security_4769"

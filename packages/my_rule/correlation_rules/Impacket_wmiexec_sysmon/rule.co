@@ -1,0 +1,18 @@
+event Process_wmi:
+    key: 
+        event_src.host
+    filter {
+        regex(lower(object.process.parent.cmdline), "[\\\\/]wmiprvse(?:\.exe)?", 0) != null
+       #and regex(lower(object.process.parent.fullpath), "[/\\\\]cmd\\.exe(?:\"|$)", 0) != null
+}
+
+# Дописать 
+rule Impacket_wmiexec_sysmon: Process_wmi
+    on Process_wmi {
+        $time = time
+        $action = action 
+        $object = "account"        
+        $status = "success"
+        $correlation_type = "event"
+        $importance = "high"
+}

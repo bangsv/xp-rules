@@ -1,0 +1,90 @@
+EVENTLOG = ''
+
+object = "account"
+subject = "process"
+status = "success" # Check_other
+
+if $EventID == "1" then 
+    action = "start"
+    datafield1 = "EventID (1) Process creation"
+elif $EventID == "3" then 
+    action = "connect"
+    datafield1 = "EventID (3) Network connection"
+endif
+
+src.host = $Computer
+src.hostname  = $Computer
+
+object.path = $Data["CurrentDirectory"]
+object.account.id = $Security["UserID"]
+object.process.cmdline = $Data["CommandLine"]
+object.process.id = $Data["ProcessId"]
+object.process.fullpath = $Data["Image"]
+
+object.process.parent.id = $Data["ParentProcessId"]
+object.process.parent.guid = $Data["ParentProcessGuid"]
+object.process.parent.fullpath = $Data["ParentImage"]
+object.process.parent.cmdline = $Data["ParentCommandLine"]
+
+# Processeing user_name 
+if find_substr($Data["User"], "\\") != null then
+    $name_length =  length($Data["User"])
+    $start_symbol = find_substr($Data["User"], "\\") + 1
+    object.account.name = substr($Data["User"], $start_symbol, $name_length)
+else 
+    object.account.name = $Data["User"]
+endif
+
+# Processing Hashes
+if find_substr($Data["Hashes"], "SHA1=") != null then
+    $start_sha1 = find_substr($Data["Hashes"], "SHA1=") + 5
+    object.process.hash.sha1 = substr($Data["Hashes"], $start_sha1, 40)
+else 
+    object.process.hash.sha1 = $Data["Hashes"]
+endif
+
+if find_substr($Data["Hashes"], "MD5=") != null then
+    $start_md5 = find_substr($Data["Hashes"], "MD5=") + 4
+    object.process.hash.md5 = substr($Data["Hashes"], $start_md5, 32)
+else
+    object.process.hash.sha1 = $Data["Hashes"]
+endif
+
+if find_substr($Data["Hashes"], "SHA256=") != null then
+    $start_sha256 = find_substr($Data["Hashes"], "SHA256=") + 7
+    object.process.hash.sha256 = substr($Data["Hashes"], $start_sha256, 64)
+else 
+    object.process.hash.sha256 = $Data["Hashes"]
+endif
+
+if find_substr($Data["Hashes"], "IMPHASH=") != null then
+    $start_imphash = find_substr($Data["Hashes"], "IMPHASH=") + 8
+    $end_imphash = $start_imphash 
+    object.process.hash.imphash = substr($Data["Hashes"], $start_imphash, 32)
+else 
+    object.process.hash.imphash = $Data["Hashes"]
+endif
+
+# Network fields
+src.ip = $Data["SourceIP"]
+src.port = $Data["SourcePort"]
+
+dst.ip = $Data["DestinationIp"]
+dst.port = $Data["DestinationPort"]
+
+protocol = $Data["Protocol"]
+
+time = $TimeCreated["SystemTime"]
+msgid = $EventID
+if $Data["IntegrityLevel"] == "High" then
+    importance = "high"
+elif $Data["IntegrityLevel"] == "Medium" then
+    importance = "medium"
+elif $Data["IntegrityLevel"] == "Low" then
+    importance = "low"
+elif $Data["IntegrityLevel"] == "System" then
+    importance = "info"
+endif
+
+event_src.vendor = lower($Provider["Name"])
+event_src.host = $Computer

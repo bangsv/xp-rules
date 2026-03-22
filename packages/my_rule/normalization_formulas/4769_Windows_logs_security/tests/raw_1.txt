@@ -49,7 +49,7 @@
                 },
                 {
                     "Name": "TicketEncryptionType",
-                    "text": "0x17"
+                    "text": "0x17&"
                 },
                 {
                     "Name": "IpAddress",

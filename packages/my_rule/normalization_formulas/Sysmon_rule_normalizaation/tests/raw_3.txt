@@ -1,0 +1,105 @@
+{
+    "Event": {
+        "System": {
+            "Provider": {
+                "Name": "Microsoft-Windows-Sysmon",
+                "Guid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"
+            },
+            "EventID": "3",
+            "Version": "5",
+            "Level": "4",
+            "Task": "3",
+            "Opcode": "0",
+            "Keywords": "0x8000000000000000",
+            "TimeCreated": {
+                "SystemTime": "2019-04-30T20:32:50.9029640Z"
+            },
+            "EventRecordID": "9825",
+            "Correlation": "",
+            "Execution": {
+                "ProcessID": "1964",
+                "ThreadID": "1568"
+            },
+            "Channel": "Microsoft-Windows-Sysmon/Operational",
+            "Computer": "IEWIN7",
+            "Security": {
+                "UserID": "S-1-5-18"
+            }
+        },
+        "EventData": {
+            "Data": [
+                {
+                    "Name": "RuleName"
+                },
+                {
+                    "text": "2019-04-30 20:32:49.659",
+                    "Name": "UtcTime"
+                },
+                {
+                    "text": "{365abb72-2584-5cc9-0000-0010ea030000}",
+                    "Name": "ProcessGuid"
+                },
+                {
+                    "text": "4",
+                    "Name": "ProcessId"
+                },
+                {
+                    "text": "System",
+                    "Name": "Image"
+                },
+                {
+                    "text": "NT AUTHORITY\\SYSTEM",
+                    "Name": "User"
+                },
+                {
+                    "text": "tcp",
+                    "Name": "Protocol"
+                },
+                {
+                    "text": "false",
+                    "Name": "Initiated"
+                },
+                {
+                    "text": "false",
+                    "Name": "SourceIsIpv6"
+                },
+                {
+                    "text": "10.0.2.18",
+                    "Name": "SourceIp"
+                },
+                {
+                    "text": "IEWIN7",
+                    "Name": "SourceHostname"
+                },
+                {
+                    "text": "445",
+                    "Name": "SourcePort"
+                },
+                {
+                    "text": "microsoft-ds",
+                    "Name": "SourcePortName"
+                },
+                {
+                    "text": "false",
+                    "Name": "DestinationIsIpv6"
+                },
+                {
+                    "text": "10.0.2.19",
+                    "Name": "DestinationIp"
+                },
+                {
+                    "Name": "DestinationHostname"
+                },
+                {
+                    "text": "45616",
+                    "Name": "DestinationPort"
+                },
+                {
+                    "Name": "DestinationPortName"
+                }
+            ]
+        },
+        "text": "--",
+        "xmlns": "http://schemas.microsoft.com/win/2004/08/events/event"
+    }
+}
