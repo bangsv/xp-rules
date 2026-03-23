@@ -5,7 +5,7 @@ event Succes_backup:
         msgid == "200" 
         # Двойная кодировка в url не работает
         and ( regex(lower(object.process.path), ".*/(api|%61%70%69)/(backup|%62%61%63%6b%75%).*", 0) != null 
-        or regex(lower(object.process.path), ".*/api/./(backup).*", 0) != null )
+        or regex(lower(object.process.path), ".*/api/./backup.*", 0) != null )
         and event_src.vendor == "nginx"
     }
 
