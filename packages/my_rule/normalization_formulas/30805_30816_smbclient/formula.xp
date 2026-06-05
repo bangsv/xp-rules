@@ -1,0 +1,50 @@
+EVENTLOG = '' 
+
+COND = lower($Provider["Name"])==lower("Microsoft-Windows-SMBClient") 
+       and lower($Channel)==lower("Microsoft-Windows-SmbClient/Connectivity") 
+       and ($EventID=="30805" or $EventID == "30816")
+
+subject = "host"
+object = "node"
+action = "connect"
+status = switch $Data["Status"]
+    case "3221225667" "failure"
+    case "3221225996" "success"
+    case "3221225676" "failure"
+endswitch
+
+subject.account.domain =  substr($Computer,find_substr($Computer,".") + 1, length($Computer))
+src.hostname =  substr($Computer,0, find_substr($Computer,"."))
+dst.port = 445
+dst.host = substr($Data["ServerName"],1, length($Data["ServerName"]))
+if $Data["Address"] == null then 
+    dst.ip = dst.host
+else 
+    dst.ip = $Data["Address"]
+endif
+
+protocol = "SMB"
+
+time = $TimeCreated["SystemTime"]
+msgid = $EventID
+importance = "medium"
+
+datafield1 = $Data["SessionId"]
+datafield2 = $EventRecordID
+datafield3 = switch $Data["Reason"]
+    case "0" "The reason is not specified"
+    case "1" "The server name cannot be resolved"
+    case "3" "IPSec error when attempting to connect"
+    case "4" "Network error "
+    case "5" "Negotiate validation error"
+    case "12" "The server rejected the request to connect to the share"
+    case "13" "Error when requesting Validate Negotiate"
+endswitch
+
+event_src.host = $Computer
+event_src.hostname = substr($Computer,0, find_substr($Computer,"."))
+event_src.category = "File service"
+event_src.title = "windows"
+event_src.vendor = "microsoft"
+
+id = "ID_Microsoft_Windows_SMBClient_Connectivity_30805_30816"
