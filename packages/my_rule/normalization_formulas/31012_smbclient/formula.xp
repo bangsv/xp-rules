@@ -5,9 +5,12 @@ COND = lower($Provider["Name"])==lower("Microsoft-Windows-SMBClient")
 
 subject = "host"
 object = "node"
-action = "disconnect"
+action = "validate"
 
 src.hostname =   substr($Computer,0, find_substr($Computer,"."))
+# Для определения целевого хоста коррелировать с событием 31013
+# dst.ip = ... 
+# dst.hostname = ...
 
 protocol = "smb"
 
@@ -29,7 +32,7 @@ datafield4 = substr($Computer,find_substr($Computer,".") + 1, length($Computer))
 datafield5 = $EventRecordID
 
 # Версия протокола SMB (диалект) в десятичном формате.
-datafield6 = switch $Dialect 
+datafield6 = switch $Data["Dialect"]
     case "514" "SMB 2.0.2"
     case "515" "SMB 2.1"
     case "516" "SMB 2.2.4"
@@ -38,24 +41,41 @@ datafield6 = switch $Dialect
     case "530" "SMB 3.1.1"
 endswitch
 
-datafield7 = switch $SecurityMode2
+datafield7 = switch $Data["SecurityMode2"]
     case "0" "signature is disabled"
     case "1" "signature is enabled"
     case "2" "signature is required"
     case "3" "signature is required"
 endswitch
 
-datafield8 = $Capabilities 
-datafield9 = $Data["Guid"]
+datafield8 = $Data["Capabilities"]
+datafield9 = switch $Data["Capabilities"]
+    case "0" "none"
+    case "1" "DFS"
+    case "2" "Leasing"
+    case "4" "Large MTU"
+    case "8" "Multi-Channel"
+    case "16" "Persistent Handles"
+    case "32" "Directory Leasing"
+    case "64" "Encryption"
+endswitch
 
-if $Level=="1"  or $Level=="3" or $Level=="3" then
+datafield10 = $Data["Guid"]
+datafield11 = $Data["Guid2"]
+datafield12 = if $Data["Guid"] != $Data["Guid2"] then "mismatch" else "match" endif
+datafield13 = if $Data["Dialect"] != $Data["Dialect2"] then "dialect_mismatch" else "dialect_match" endif
+datafield14 = if $Data["SecurityMode"] != $Data["SecurityMode2"] then "security_mode_mismatch" else "security_mode_match" endif
+datafield15 = if $Data["Capabilities"] != $Data["Capabilities2"] then "capabilities_mismatch" else "capabilities_match" endif
+datafield16 = if $Data["Guid"] != $Data["Guid2"] then "guid_mismatch" else "guid_match" endif
+
+if $Level=="1"  or $Level=="2" or $Level=="3" then
     importance = "high"
 else 
     importance = "info"
 endif
 
 event_src.host = substr($Computer,0, find_substr($Computer,"."))
-event_src.hostname = $Computer
+event_src.hostname = substr($Computer,0, find_substr($Computer,"."))
 event_src.fqdn = $Computer
 event_src.category = "File service"
 event_src.title = "windows"
