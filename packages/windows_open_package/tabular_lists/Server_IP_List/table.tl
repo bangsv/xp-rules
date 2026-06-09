@@ -1,4 +1,4 @@
-name: test_table
+name: Server_IP_List
 type: 1
 fillType: Registry
 userCanEditContent: true

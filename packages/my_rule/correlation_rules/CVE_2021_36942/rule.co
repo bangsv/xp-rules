@@ -1,0 +1,28 @@
+query Check_Server ($ip) from Server_IP_List {
+    column::ip == $ip
+}
+
+event Initiated_DC:
+    key:
+        src.hostname
+    filter {
+        exec_query("Check_Server",[src.ip]) != null
+        and msgid == "3"
+        and status == "success"
+        and event_src.title == "sysmon"
+    }
+
+
+rule CVE_2021_36942: Initiated_DC
+
+on Initiated_DC {
+    $status = status
+    $action = action
+    $object = object
+}
+
+
+emit {
+    $correlation_type = "event"
+    $importance = "high"
+}
