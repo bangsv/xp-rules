@@ -28,7 +28,7 @@ event Initiated_DC_not_file_server:
         and dst.port == 445
     }
 
-rule DC_Anomaly_SMB: (Initiated_DC_not_file_server[1] and Pipe_connection[1]) timer 10s
+rule DC_Anomaly_SMB: (Initiated_DC_not_file_server[1] and Pipe_connection[1]) timer 2s
 
 on Initiated_DC_not_file_server {
     $src.ip = src.ip

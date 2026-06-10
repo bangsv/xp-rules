@@ -30,7 +30,7 @@ event Login_other_host:
         and not in_list(["анонимный вход", "anonymous logon"], lower(subject.account.name))
     }
 
-rule NTLM_Relay_Lateral_Movement: (Attacker_host_connected_DC[1] and Login_other_host[1]) timer 10s
+rule NTLM_Relay_Lateral_Movement: (Attacker_host_connected_DC[1] and Login_other_host[1]) timer 3s
 
 on Attacker_host_connected_DC {
     $src.ip = src.ip
