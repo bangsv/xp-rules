@@ -8,12 +8,6 @@
 {"action":"login","category.generic":"Operating System","category.high":"Access Management","category.low":"Communication","chain_id":"d6b97281-efa2-0001-e372-b9d6a2efdc01","datafield6":"Network","datafield9":"NTLM","dst.fqdn":"desktop-iab210v.work.local","dst.hostname":"desktop-iab210v","event_src.category":"AAA","event_src.fqdn":"desktop-iab210v.work.local","event_src.hostname":"desktop-iab210v","event_src.subsys":"Security","event_src.title":"windows","event_src.vendor":"microsoft","id":"PT_Microsoft_Windows_eventlog_4624_An_account_was_successfully_logged_on","importance":"info","logon_auth_method":"remote","logon_service":"NtLmSsp","logon_type":3,"msgid":"4624","object":"system","object.property":"session ID with ElevatedToken","object.value":"0","src.hostname":"dc01","src.ip":"192.168.0.30","src.port":38536,"status":"success","subject":"account","subject.account.domain":"work","subject.account.id":"S-1-5-21-2790878447-3455683389-983535108-1002","subject.account.name":"dc01$","subject.account.privileges":"local administrator rights","subject.account.session_id":"5350590","time":"2026-05-29T20:23:51.688Z"}
 {"action":"login","category.generic":"Operating System","category.high":"Access Management","category.low":"Communication","datafield6":"Network","datafield9":"NTLM","dst.fqdn":"dc01.work.local","dst.hostname":"dc01","event_src.category":"AAA","event_src.fqdn":"dc01.work.local","event_src.hostname":"dc01","event_src.subsys":"Security","event_src.title":"windows","event_src.vendor":"microsoft","id":"PT_Microsoft_Windows_eventlog_4624_An_account_was_successfully_logged_on","importance":"info","logon_auth_method":"remote","logon_service":"NtLmSsp","logon_type":3,"msgid":"4624","object":"system","src.ip":"192.168.0.30","src.port":55560,"status":"success","subject":"account","subject.account.domain":"nt authority","subject.account.id":"S-1-5-7","subject.account.name":"анонимный вход","subject.account.session_id":"895532","time":"2026-05-29T20:23:51.657Z"}
 
-# Тут будет твой модульный тест.
-# Пример:
-## создать для теста временную БД с табличными списками
-# table_list default
-## ожидаемое заполнение табличных списков
-# table_list {"AD_Domain_Controllers":[{"ip":"8.8.8.8","hostname":"dc.contoso.com"}]}
 ## ожидаеммые события
 # expect <число>|not|any {<через запятую пары "поле":"значение">}
     
