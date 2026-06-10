@@ -1,4 +1,4 @@
-name: Server_IP_List
+name: Server_List
 type: 1
 fillType: Registry
 userCanEditContent: true
@@ -8,6 +8,13 @@ fields:
       primaryKey: true
       index: true
       nullable: false
+  - fqdn:
+      type: String
+      index: false
+      nullable: false
+      primaryKey: false
+      unique: false
 defaults:
   PT:
     - ip: 192.168.0.10
+      fqdn: dc01.work.local

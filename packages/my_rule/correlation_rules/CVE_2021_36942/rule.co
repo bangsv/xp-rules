@@ -1,26 +1,54 @@
-query Check_Server ($ip) from Server_IP_List {
+query Check_Server ($ip) from Server_List {
     column::ip == $ip
 }
 
-event Initiated_DC:
+# Подключение атакующего для прохождении аунтификации, взял вместо события 4624
+event Attacker_host_connected_DC:
     key:
-        src.hostname
+        src.ip
     filter {
-        exec_query("Check_Server",[src.ip]) != null
+        filter::NotFromCorrelator()
         and msgid == "3"
         and status == "success"
         and event_src.title == "sysmon"
+        and direction == "ingress"
+        and exec_query("Check_Server",[dst.ip])
+        and not exec_query("Check_Server",[src.ip])
+        and dst.port == 445
     }
 
 
-rule CVE_2021_36942: Initiated_DC
+event Login_other_host:
+    key:
+        src.ip
+        filter {
+            filter::NotFromCorrelator()
+            and msgid == "4624"
+            and logon_type == 3
+            and status == "success"
+            and logon_service == "NtLmSsp"
+            and event_src.title == "windows"
+            and strip(subject.account.name, "", "$") != event_src.hostname
+            and not in_list(["анонимный вход", "anonymous logon"], lower(subject.account.name))
+        }
 
-on Initiated_DC {
+rule CVE_2021_36942:  (Attacker_host_connected_DC[1] and Login_other_host[1]) timer 10s
+
+
+
+on Attacker_host_connected_DC {
     $status = status
     $action = action
     $object = object
 }
 
+
+on Login_other_host {
+    $status = status
+    $action = action
+    $object = object
+    $datafield12 = strip(subject.account.name, "", "$")
+}
 
 emit {
     $correlation_type = "event"
