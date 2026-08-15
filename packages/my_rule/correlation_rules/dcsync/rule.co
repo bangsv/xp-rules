@@ -1,5 +1,5 @@
-query Check_Server ($fqdn) from Server_List {
-    column::fqdn == $fqdn
+query Check_Server ($ip) from Server_List {
+    column::ip == $ip
 }
 
 event Success_login:
@@ -10,7 +10,7 @@ event Success_login:
         and logon_type == 3
         and status == "success"
         and event_src.title == "windows"
-        and exec_query("Check_Server", [event_src.fqdn])
+        and not (exec_query("Check_Server", [src.ip]) or match(".*$", subject.account.name))
     }
         
 event Suspicion_performed_object:
