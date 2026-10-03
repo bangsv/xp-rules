@@ -1,33 +1,24 @@
-{
-    "eventid": "1590",
-    "timestampfractional": "075",
-    "timestamp": "1684107109",
-    "node": "10.10.49.19",
+  {
+    "eventid": "7199",
     "items": {
-        "EOE": [
-            ""
-        ],
-        "BPRM_FCAPS": [
-            "fver=0 fp=0 fi=0 fe=0 old_pp=00000000a80425fb old_pi=0 old_pe=00000000a80425fb old_pa=0 pp=00000000a80425fb pi=0 pe=00000000a80425fb pa=0 frootid=0"
-        ],
-        "SYSCALL": [
-            "arch=c000003e syscall=59 success=yes exit=0 a0=7ffea4fffc29 a1=7ffea4fffb60 a2=7ffea50002f0 a3=7ffea5001f7e items=5 ppid=1694 pid=1695 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"run\" exe=\"/usr/bin/bash\" subj=docker-default (enforce) key=\"pt_siem_execve\" ARCH=x86_64 SYSCALL=execve AUID=\"unset\" UID=\"root\" GID=\"root\" EUID=\"root\" SUID=\"root\" FSUID=\"root\" EGID=\"root\" SGID=\"root\" FSGID=\"root\""
-        ],
-        "PATH": [
-            "item=0 name=\"/etc/s6-overlay/s6-rc.d/init-mods-package-install/run\" inode=926434 dev=00:25 mode=0100775 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\"",
-            "item=1 name=\"/etc/s6-overlay/s6-rc.d/init-mods-package-install/run\" inode=926434 dev=00:25 mode=0100775 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\"",
-            "item=2 name=\"/usr/bin/with-contenv\" inode=926451 dev=00:25 mode=0100775 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\"",
-            "item=4 name=\"/lib64/ld-linux-x86-64.so.2\" inode=663502 dev=00:25 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\"",
-            "item=3 name=\"/bin/bash\" inode=537055 dev=00:25 mode=0100755 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\""
-        ],
-        "EXECVE": [
-            "argc=4 a0=\"/bin/bash\" a1=\"/usr/bin/with-contenv\" a2=\"bash\" a3=\"/etc/s6-overlay/s6-rc.d/init-mods-package-install/run\""
-        ],
-        "CWD": [
-            "cwd=\"/run/s6-rc:s6-rc-init:kJhlFp/servicedirs/s6rc-oneshot-runner\""
-        ],
-        "PROCTITLE": [
-            "proctitle=2F7061636B6167652F61646D696E2F73362D72632F636F6D6D616E642F73362D72632D6F6E6573686F742D72756E002D6C002E2E2F2E2E002D2D0075700036"
-        ]
-    }
-}
+      "PROCTITLE": [
+        "proctitle=id"
+      ],
+      "PATH": [
+        "item=1 name=/lib64/ld-linux-x86-64.so.2 inode=1587864 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\"",
+        "item=0 name=/usr/bin/id inode=1577371 dev=08:02 mode=file,755 ouid=root ogid=root rdev=00:00 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 OUID=\"root\" OGID=\"root\""
+      ],
+      "CWD": [
+        "cwd=/home/user/Desktop/copy-fail-CVE-2026-31431"
+      ],
+      "EXECVE": [
+        "argc=1 a0=id"
+      ],
+      "SYSCALL": [
+        "arch=c000003e syscall=59 success=yes exit=0 a0=0x60e177aab530 a1=0x60e177aab510 a2=0x60e177aab520 a3=0x8 items=2 ppid=4884 pid=4885 auid=user uid=root gid=user euid=root suid=root fsuid=root egid=user sgid=user fsgid=user tty=pts0 ses=3 comm=id exe=/usr/bin/id subj=unconfined key=process_creation ARCH=x86_64 SYSCALL=execve AUID=\"user\" UID=\"root\" GID=\"user\" EUID=\"root\" SUID=\"root\" FSUID=\"root\" EGID=\"user\" SGID=\"user\" FSGID=\"user\""
+      ]
+    },
+    "node": "",
+    "timestamp": "1773153373",
+    "timestampfractional": "031"
+  }

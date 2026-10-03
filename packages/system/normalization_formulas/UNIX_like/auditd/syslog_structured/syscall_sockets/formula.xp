@@ -13,6 +13,7 @@ COND = (
                 or find_substr($items["SYSCALL"][0], "syscall=288") != null  # accept4
                 or find_substr($items["SYSCALL"][0], "syscall=49") != null   # bind
                 or find_substr($items["SYSCALL"][0], "syscall=50") != null   # listen
+                or find_substr($items["SYSCALL"][0], "syscall=54") != null   # setsockopt
             )
         )
         or (
@@ -23,6 +24,7 @@ COND = (
                 or find_substr($items["SYSCALL"][0], "syscall=364") != null  # accept4
                 or find_substr($items["SYSCALL"][0], "syscall=361") != null  # bind
                 or find_substr($items["SYSCALL"][0], "syscall=363") != null  # listen
+                or find_substr($items["SYSCALL"][0], "syscall=366") != null  # setsockopt
             )
         )
     )
@@ -132,6 +134,13 @@ elif in_list(["50", "363"], $kv_syscall["syscall"]) then
     action = "assign"
     object = "socket"
 
+# setsockopt
+elif in_list(["54", "366"], $kv_syscall["syscall"]) then
+    action = "modify"
+    object = "socket"
+    object.property = "socket_option"
+    object.value = $kv_syscall["a1"] + ":" + $kv_syscall["a2"]
+
     category.generic = "Socket"
     category.high = "Network Management"
     category.low = "Manipulation"
@@ -190,23 +199,23 @@ subject.process.path = $process_path
 
 # PROCTITLE
 if $items["PROCTITLE"] != null then
-    $kv_proctitle = keyvalue($items["PROCTITLE"][0], ' ', '=')
-
-    $process_proctitle = strip($kv_proctitle["proctitle"], '"', '"')
+    $process_proctitle_raw = substr($items["PROCTITLE"][0], 10, length($items["PROCTITLE"][0]) - 10)
+    $process_proctitle = $process_proctitle_raw
+    $process_proctitle = strip($process_proctitle, '"', '"')
     if $process_proctitle == "(null)" then
         $process_proctitle = null
-    elif $process_proctitle == $kv_proctitle["proctitle"] then
-        $cmdline_raw = hex_to_string($kv_proctitle["proctitle"])
+    elif $process_proctitle == $process_proctitle_raw then
+        $cmdline_raw = hex_to_string($process_proctitle)
 
         # stripping corrupted char
-        if $cmdline_raw == $kv_proctitle["proctitle"] then
-            $cmdline_raw = hex_to_string(substr($kv_proctitle["proctitle"], 0, 254))
+        if $cmdline_raw == $process_proctitle then
+            $cmdline_raw = hex_to_string(substr($process_proctitle, 0, 254))
         endif
-        if $cmdline_raw == $kv_proctitle["proctitle"] then
-            $cmdline_raw = hex_to_string(substr($kv_proctitle["proctitle"], 0, 253))
+        if $cmdline_raw == $process_proctitle then
+            $cmdline_raw = hex_to_string(substr($process_proctitle, 0, 253))
         endif
-        if $cmdline_raw == $kv_proctitle["proctitle"] then
-            $cmdline_raw = hex_to_string(substr($kv_proctitle["proctitle"], 0, 252))
+        if $cmdline_raw == $process_proctitle then
+            $cmdline_raw = hex_to_string(substr($process_proctitle, 0, 252))
         endif
 
         $process_proctitle = replace($cmdline_raw, " ", "\u0000")
@@ -233,7 +242,7 @@ $kv_sockaddr = keyvalue($items["SOCKADDR"][0], ' ', '=', '"')
 
 $socket = $kv_sockaddr["saddr"]
 
-if not in_list(["41", "359", "50", "363"], $kv_syscall["syscall"]) then
+if not in_list(["41", "359", "50", "363", "54", "366"], $kv_syscall["syscall"]) then
     object.property = "socket_domain"
     object.value = switch substr($socket, 0, 4)
         case "0000" "AF_UNSPEC"
@@ -352,6 +361,8 @@ msgid = switch $kv_syscall["syscall"]
     case "361" "bind"
     case "50"  "listen"
     case "363" "listen"
+    case "54"  "setsockopt"
+    case "366" "setsockopt"
 endswitch
 
 importance = "low"
