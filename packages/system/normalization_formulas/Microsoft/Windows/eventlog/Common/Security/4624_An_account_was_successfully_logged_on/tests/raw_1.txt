@@ -4,94 +4,70 @@
             "Data": [
                 {
                     "Name": "SubjectUserSid",
-                    "text": "S-1-0-0"
+                    "text": "S-1-5-21-2000000021-3900000077-690000019-1106"
                 },
                 {
                     "Name": "SubjectUserName",
-                    "text": "-"
+                    "text": "admin"
                 },
                 {
                     "Name": "SubjectDomainName",
-                    "text": "-"
+                    "text": "TEST"
                 },
                 {
                     "Name": "SubjectLogonId",
+                    "text": "0x8e99e"
+                },
+                {
+                    "Name": "ObjectServer",
+                    "text": "DS"
+                },
+                {
+                    "Name": "ObjectType",
+                    "text": "%{b00000ba-0006-1000-a005-0011111111e2}"
+                },
+                {
+                    "Name": "ObjectName",
+                    "text": "%{600000ca-200f-4005-b009-31000000005c}"
+                },
+                {
+                    "Name": "OperationType",
+                    "text": "Object Access"
+                },
+                {
+                    "Name": "HandleId",
                     "text": "0x0"
                 },
                 {
-                    "Name": "TargetUserSid",
-                    "text": "S-1-5-21-1000000030-700000027-3900000002-18209"
+                    "Name": "AccessList",
+                    "text": "%%7684"
                 },
                 {
-                    "Name": "TargetUserName",
-                    "text": "DC1-KAV-01$"
+                    "Name": "AccessMask",
+                    "text": "0x10"
                 },
                 {
-                    "Name": "TargetDomainName",
-                    "text": "ACME"
+                    "Name": "Properties",
+                    "text": "%%7684\n\t\t{700000b1-3008-400f-a002-4f111111119e}\n\t\t{3000009f-f008-4008-9000-811111111182}\n\t\t{b00000ba-0006-1000-a005-0011111111e2}\n\t"
                 },
                 {
-                    "Name": "TargetLogonId",
-                    "text": "0x7e31b06"
-                },
-                {
-                    "Name": "LogonType",
-                    "text": "3"
-                },
-                {
-                    "Name": "LogonProcessName",
-                    "text": "Kerberos"
-                },
-                {
-                    "Name": "AuthenticationPackageName",
-                    "text": "Kerberos"
-                },
-                {
-                    "Name": "WorkstationName"
-                },
-                {
-                    "Name": "LogonGuid",
-                    "text": "{FB000002-1001-200A-600A-E7FF11FF1149}"
-                },
-                {
-                    "Name": "TransmittedServices",
+                    "Name": "AdditionalInfo",
                     "text": "-"
                 },
                 {
-                    "Name": "LmPackageName",
-                    "text": "-"
-                },
-                {
-                    "Name": "KeyLength",
-                    "text": "0"
-                },
-                {
-                    "Name": "ProcessId",
-                    "text": "0x0"
-                },
-                {
-                    "Name": "ProcessName",
-                    "text": "-"
-                },
-                {
-                    "Name": "IpAddress",
-                    "text": "10.141.81.142"
-                },
-                {
-                    "Name": "IpPort",
-                    "text": "62033"
+                    "Name": "AdditionalInfo2"
                 }
             ]
         },
         "System": {
             "Channel": "Security",
-            "Computer": "SOMEONE.acme.com",
+            "Computer": "WIN-J500000000Q.test.local",
             "Correlation": null,
-            "EventID": "4624",
-            "EventRecordID": "430520",
+            "EventID": "4662",
+            "EventRecordID": "229133",
             "Execution": {
-                "ProcessID": "664",
-                "ThreadID": "3768"
+                "ProcessID": "488",
+                "ThreadID": "2600"
             },
             "Keywords": "0x8020000000000000",
             "Level": "0",
@@ -101,9 +77,9 @@
                 "Name": "Microsoft-Windows-Security-Auditing"
             },
             "Security": null,
-            "Task": "12544",
+            "Task": "10080",
             "TimeCreated": {
-                "SystemTime": "2013-10-17T15:45:19.401995400Z"
+                "SystemTime": "2014-09-12T11:18:56.301078300Z"
             },
             "Version": "0"
         },

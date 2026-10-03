@@ -12,13 +12,13 @@
             "Opcode": "0",
             "Keywords": "0x8020000000000000",
             "TimeCreated": {
-                "SystemTime": "2026-06-19T21:15:36.6619926Z"
+                "SystemTime": "2026-06-19T21:15:36.6459975Z"
             },
-            "EventRecordID": "34031",
+            "EventRecordID": "34029",
             "Correlation": "",
             "Execution": {
                 "ProcessID": "524",
-                "ThreadID": "5316"
+                "ThreadID": "1768"
             },
             "Channel": "Security",
             "Computer": "dc01.work.local",
@@ -71,7 +71,7 @@
                     "Name": "AccessMask"
                 },
                 {
-                    "text": "%%7688 {1131f6aa-9c07-11d1-f79f-00c04fc2dcd2} {19195a5b-6da0-11d0-afd3-00c04fd930c9}",
+                    "text": "%%7688 {1131f6ad-9c07-11d1-f79f-00c04fc2dcd2} {19195a5b-6da0-11d0-afd3-00c04fd930c9}",
                     "Name": "Properties"
                 },
                 {
@@ -83,6 +83,7 @@
                 }
             ]
         },
+        "text": "--",
         "xmlns": "http://schemas.microsoft.com/win/2004/08/events/event"
     }
 }

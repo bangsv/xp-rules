@@ -1,0 +1,66 @@
+# Правило не завершено. Требуется доработка. В данный момент event не расписан как on с emit
+query Check_Server ($fqdn) from Server_List {
+    column::fqdn == $fqdn
+}
+
+event Authentication_Failed:
+    key:
+        event_src.hostname
+    filter {
+        in_list(["5805","5723"], msgid)
+        and exec_query("Check_Server", [event_src.fqdn])
+    }
+
+event Changed_Computer_Account:
+    key:
+        event_src.hostname
+    filter {
+        msgid == "4742"
+        and subject.account.id == "S-1-5-7"
+        and status == "success"
+        and exec_query("Check_Server", [event_src.fqdn])
+        and object.property == "modified attributes"
+    }
+
+event Success_Changed_Password:
+    key:
+        event_src.hostname
+    filter {
+        msgid == "5823"
+    }
+
+rule Zerologon: ((Changed_Computer_Account and Authentication_Failed ) or (Authentication_Failed and not Success_Changed_Password)) timer 1m
+
+on Authentication_Failed {
+
+    $event_src.hostname = event_src.hostname
+    $event_src.fqdn = event_src.fqdn
+
+}
+
+on Changed_Computer_Account {
+
+    $object.account.name = object.account.name
+    $object.property = object.property
+    $object.account.name = object.account.name
+    $object.account.domain = object.account.domain
+    
+    $object = object
+    $subject = subject
+    $subject.account.name = subject.account.name 
+
+    $event_src.title = event_src.title
+    $event_src.vendor = event_src.vendor
+
+}
+
+emit {
+
+    $correlation_type = "incident"
+
+    $object = "account"
+    $action = "modify"
+    $status = "success"
+    $importance = "high"
+
+}
